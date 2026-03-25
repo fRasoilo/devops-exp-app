@@ -73,3 +73,23 @@ jobs:
           header: test-coverage
           recreate: true
           path: code-coverage-results.md
+  scan:
+    name: Scan Backend Image
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src/backend
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Build Image
+        run: docker build -t backend:${{ github.sha }} .
+      - name: Scan with Trivy
+        uses: aquasecurity/trivy-action@0.35.0
+        with:
+          image-ref: 'backend:${{ github.sha }}'
+          format: 'table'
+          exit-code: '0'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
