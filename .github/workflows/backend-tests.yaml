@@ -85,7 +85,7 @@ jobs:
       - name: Build Image
         run: docker build -t backend:${{ github.sha }} .
       - name: Scan with Trivy
-        uses: aquasecurity/trivy-action@0.33.1
+        uses: aquasecurity/trivy-action@0.35
         with:
           image-ref: 'backend:${{ github.sha }}'
           format: 'table'
