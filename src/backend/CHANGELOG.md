@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.2](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.2.1...backend-v0.2.2) (2026-03-27)
+
+
+### Bug Fixes
+
+* **backend:** fix and manual trigger image building ([26ba251](https://github.com/fRasoilo/devops-exp-app/commit/26ba2519ac57cf4364a9bbe8bd26d6222168d8ef))
+
 ## [0.2.1](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.2.0...backend-v0.2.1) (2026-03-27)
 
 
