@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.2.1](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.2.0...backend-v0.2.1) (2026-03-27)
+
+
+### Bug Fixes
+
+* **backend:** fix to image bulding workflow ([#16](https://github.com/fRasoilo/devops-exp-app/issues/16)) ([fcd410e](https://github.com/fRasoilo/devops-exp-app/commit/fcd410e464e65c48f90047171e54f7b8655c5d3b))
+
+## [0.2.0](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.1.0...backend-v0.2.0) (2026-03-27)
+
+
+### Features
+
+* **backend:** added container image building and pushing ([#14](https://github.com/fRasoilo/devops-exp-app/issues/14)) ([2861562](https://github.com/fRasoilo/devops-exp-app/commit/286156288a4a29e9b2a0c30ff2ce5773120d2c36))
+
 ## 0.1.0 (2026-03-26)
 
 
