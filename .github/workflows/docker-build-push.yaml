@@ -3,6 +3,7 @@ on:
   push:
     tags:
       - "backend*"
+      - "frontend*"
 env:
   REGISTRY: ghcr.io
   BACKEND_IMAGE_NAME: ${{ github.repository_owner }}/study-app-api
@@ -45,3 +46,42 @@ jobs:
     outputs:
       tag: ${{ steps.tag.outputs.TAG }}
       app: backend
+
+  build-and-push-frontend:
+    name: Build and Push Frontend
+    runs-on: ubuntu-latest
+    # Only run for frontend tags
+    if: contains(github.ref, 'frontend')
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Normalize owner to lowercase
+        id: owner
+        run: echo "owner=${GITHUB_REPOSITORY_OWNER,,}" >> $GITHUB_OUTPUT
+
+      - name: Log in to the container registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract tag name
+        id: tag
+        run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Build and push Frontend Docker Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./src/frontend
+          push: true
+          tags: |
+            ${{ env.REGISTRY }}/${{ steps.owner.outputs.owner }}/study-app-web:${{ steps.tag.outputs.TAG }}
+            ${{ env.REGISTRY }}/${{ steps.owner.outputs.owner }}/study-app-web:latest
+    outputs:
+      tag: ${{ steps.tag.outputs.TAG }}
+      app: frontend
