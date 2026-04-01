@@ -101,6 +101,8 @@ async def read_stats():
 # This comment is used to trigger the CI pipeline when changes are made to this file 2
 # Manual trigger CI pipeline
 
+# Manual trigger CI pipeline
+
 
 def main():
     """Entry point for running the API server"""
