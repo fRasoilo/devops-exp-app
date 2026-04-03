@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.2.3...backend-v0.2.4) (2026-04-03)
+
+
+### Bug Fixes
+
+* **backend:** trigger pipeline ([f908e39](https://github.com/fRasoilo/devops-exp-app/commit/f908e3991bfd989de2c403326b5a089d53d51173))
+
 ## [0.2.3](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.2.2...backend-v0.2.3) (2026-04-03)
 
 
