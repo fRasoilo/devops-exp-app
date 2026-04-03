@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.5](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.2.4...backend-v0.2.5) (2026-04-03)
+
+
+### Bug Fixes
+
+* **backend:** trigger manually ([1e5922d](https://github.com/fRasoilo/devops-exp-app/commit/1e5922d21b676ed7f5c22ff64a738f546bd3f034))
+
 ## [0.2.4](https://github.com/fRasoilo/devops-exp-app/compare/backend-v0.2.3...backend-v0.2.4) (2026-04-03)
 
 
