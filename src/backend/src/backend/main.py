@@ -103,6 +103,7 @@ async def read_stats():
 # Manual trigger CI pipeline
 # trigger pipeline
 # trigger maunally
+# trigger pipeline
 
 
 def main():
