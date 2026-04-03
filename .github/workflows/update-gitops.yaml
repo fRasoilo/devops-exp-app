@@ -50,11 +50,11 @@ jobs:
           echo "Calling update script with tag: ${{ inputs.tag }}, file: $KUSTOMIZATION_FILE, image: ${{ inputs.image }}"
           "$SCRIPT_PATH" "${{ inputs.tag }}" "$KUSTOMIZATION_FILE" "${{ inputs.image }}"
 
-      - uses: EndBug/add-and-commit@v9
+      - uses: EndBug/add-and-commit@v10
         with:
           author_name: GitOps Bot
           author_email: mail@example.com
-          cwd: ./devops-study-app-gitops
+          cwd: ./devops-exp-app-gitops
           message: Update ${{ inputs.image }} deployment with tag "${{ inputs.tag }}"
 
       - name: Update Image Tags Prod
